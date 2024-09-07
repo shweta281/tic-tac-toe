@@ -99,26 +99,29 @@ export default function App() {
   }
 
   return (
-    <main>
-      {won && <Confetti />}
-      <h1>Tic Tac Toe</h1>
-      <div className="box-container">{boxElement}</div>
-      <h2>
-        {!(turn & 1)
-          ? won
-            ? "Player 2 Won!"
-            : "Player 1 Turn"
-          : won
-          ? "Player 1 Won!"
-          : "Player 2 Turn"}
-      </h2>
-      <h2
-        onClick={newGame}
-        style={{ backgroundColor: "#2bd8a4", cursor: "pointer" }}
-      >
-        {" "}
-        {won ? "Play Again!" : "Restart"}{" "}
-      </h2>
-    </main>
+    <div>
+      <main>
+        {won && <Confetti />}
+        <h1>Tic Tac Toe</h1>
+        <div className="box-container">{boxElement}</div>
+        <h2>
+          {!(turn & 1)
+            ? won
+              ? "Player 2 Won!"
+              : "Player 1 Turn"
+            : won
+            ? "Player 1 Won!"
+            : "Player 2 Turn"}
+        </h2>
+        <h2
+          onClick={newGame}
+          style={{ backgroundColor: "#2bd8a4", cursor: "pointer" }}
+        >
+          {" "}
+          {won ? "Play Again!" : "Restart"}{" "}
+        </h2>
+      </main>
+      <p className="pack"><a className="pack-span" href="https://github.com/shweta281">shweta281</a></p>
+    </div>
   );
 }
